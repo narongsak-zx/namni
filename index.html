@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สรุปเข้ม เคมีสำหรับครู 2 (Final Review)</title>
+    <title>สรุปเข้ม เคมีสำหรับครู 2 (Final Exam Ready)</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,12 +16,14 @@
 
     <style>
         :root {
-            --primary: #1565c0;      /* Blue Dark */
-            --secondary: #42a5f5;    /* Blue Light */
-            --accent: #ff9800;       /* Orange */
-            --bg-body: #f5f7fa;
+            --primary: #1976d2;      /* Blue 700 */
+            --primary-light: #bbdefb;
+            --secondary: #0097a7;    /* Cyan 700 */
+            --accent: #f57c00;       /* Orange 700 */
+            --bg-body: #f0f2f5;
             --text-main: #263238;
-            --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --success-bg: #e8f5e9;
+            --success-border: #a5d6a7;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,46 +33,39 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.7;
-            padding-bottom: 60px;
+            padding-bottom: 80px;
         }
 
         /* --- Header --- */
         header {
-            background: linear-gradient(135deg, var(--primary), #0d47a1);
+            background: linear-gradient(135deg, #1565c0, #006064);
             color: white;
-            padding: 60px 20px 40px;
+            padding: 50px 20px 40px;
             text-align: center;
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            margin-bottom: -30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            margin-bottom: -25px;
             position: relative;
             z-index: 1;
         }
 
-        h1 {
-            font-family: 'Prompt', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
+        h1 { font-family: 'Prompt', sans-serif; font-size: 2rem; margin-bottom: 8px; }
         
-        .subtitle { opacity: 0.9; font-weight: 300; }
-
         /* --- Navigation --- */
         .nav-container {
             position: sticky;
-            top: 15px;
+            top: 10px;
             z-index: 100;
             display: flex;
             justify-content: center;
-            padding: 0 15px;
+            padding: 0 10px;
         }
 
         .nav-pills {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
-            padding: 10px;
+            padding: 8px 12px;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             display: flex;
@@ -84,125 +79,130 @@
         .nav-item {
             text-decoration: none;
             color: var(--text-main);
-            padding: 8px 18px;
-            border-radius: 25px;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-family: 'Prompt', sans-serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             white-space: nowrap;
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
-
         .nav-item:hover, .nav-item.active {
             background-color: var(--primary);
             color: white;
         }
 
         /* --- Layout --- */
-        .container {
-            max-width: 900px;
-            margin: 50px auto 0;
-            padding: 0 20px;
-        }
+        .container { max-width: 900px; margin: 50px auto 0; padding: 0 20px; }
 
         section {
             background: white;
-            border-radius: 24px;
-            padding: 35px;
+            border-radius: 20px;
+            padding: 30px;
             margin-bottom: 40px;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             border-top: 5px solid var(--secondary);
-            scroll-margin-top: 100px;
+            scroll-margin-top: 90px;
         }
 
         h2 {
             font-family: 'Prompt', sans-serif;
             color: var(--primary);
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            border-bottom: 2px solid #eceff1;
-            padding-bottom: 15px;
+            gap: 12px;
         }
 
         h3 {
             font-family: 'Prompt', sans-serif;
             color: #455a64;
-            font-size: 1.4rem;
-            margin-top: 40px;
+            font-size: 1.3rem;
+            margin-top: 35px;
             margin-bottom: 15px;
-            border-left: 5px solid var(--accent);
-            padding-left: 15px;
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
         }
 
-        /* --- Formula & Variables --- */
+        /* --- Custom Boxes --- */
         .formula-card {
             background: #263238;
             color: #eceff1;
-            padding: 25px;
-            border-radius: 16px;
-            margin: 25px 0;
-            position: relative;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        .formula-display {
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
             text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
             overflow-x: auto;
+            border: 1px solid #37474f;
         }
 
-        .var-list {
-            border-top: 1px solid #455a64;
-            padding-top: 15px;
-            font-size: 0.9rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            color: #b0bec5;
-        }
-
-        .var-item strong {
-            color: #81d4fa; /* Light Blue for variable names */
-            font-family: 'Prompt', sans-serif;
-        }
-
-        /* --- Example Box --- */
         .example-box {
-            background-color: #fff8e1;
-            border: 2px dashed #ffb74d;
+            background-color: #fffde7;
+            border: 2px dashed #fbc02d;
             border-radius: 16px;
-            padding: 30px;
-            margin: 30px 0;
+            padding: 25px;
+            margin: 35px 0;
             position: relative;
         }
 
         .example-badge {
             position: absolute;
-            top: -15px;
+            top: -14px;
             left: 20px;
             background: var(--accent);
             color: white;
-            padding: 5px 15px;
+            padding: 4px 15px;
             border-radius: 20px;
             font-family: 'Prompt', sans-serif;
             font-weight: bold;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 0.85rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
 
-        /* --- Step List --- */
+        /* --- Variable Note Box (New Feature) --- */
+        .var-note {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: #0d47a1;
+        }
+        .var-title {
+            font-family: 'Prompt', sans-serif;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #1565c0;
+        }
+        .var-item {
+            display: inline-block;
+            margin-right: 15px;
+            margin-bottom: 5px;
+        }
+        .var-key {
+            font-weight: bold;
+            color: #0277bd;
+            font-family: monospace;
+            background: rgba(255,255,255,0.5);
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        /* --- Steps --- */
         .step-list {
             list-style: none;
             counter-reset: steps;
-            margin-top: 20px;
+            margin-top: 15px;
         }
         .step-list li {
             position: relative;
             padding-left: 45px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .step-list li::before {
             counter-increment: steps;
@@ -225,47 +225,30 @@
         .table-responsive {
             overflow-x: auto;
             margin: 20px 0;
-            border-radius: 12px;
+            border-radius: 10px;
             border: 1px solid #cfd8dc;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 600px;
-        }
-        th {
-            background-color: #eceff1;
-            font-family: 'Prompt', sans-serif;
-            padding: 15px;
-            text-align: left;
-            color: var(--text-main);
-        }
-        td {
-            padding: 15px;
-            border-top: 1px solid #cfd8dc;
-        }
+        table { width: 100%; border-collapse: collapse; min-width: 500px; }
+        th { background: #eceff1; padding: 12px; text-align: left; font-family: 'Prompt', sans-serif; color: var(--text-main); }
+        td { padding: 12px; border-top: 1px solid #cfd8dc; }
 
         /* --- Footer --- */
-        footer {
-            text-align: center;
-            color: #90a4ae;
-            font-size: 0.9rem;
-            margin-top: 50px;
-        }
+        footer { text-align: center; color: #90a4ae; font-size: 0.9rem; margin-top: 50px; }
 
         /* --- Mobile --- */
         @media (max-width: 600px) {
+            header { padding: 40px 15px 30px; }
             h1 { font-size: 1.8rem; }
-            section { padding: 25px 20px; }
-            .var-list { grid-template-columns: 1fr; }
+            section { padding: 20px; }
+            .var-item { display: block; margin-bottom: 8px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>สรุปเข้ม เคมีสำหรับครู 2</h1>
-        <p class="subtitle">Midterm Review: Solutions, Thermodynamics, Kinetics, Equilibrium</p>
+        <h1><i class="fas fa-microscope"></i> สรุปเข้ม เคมีสำหรับครู 2</h1>
+        <p class="subtitle">เนื้อหาเจาะลึก + ตัวอย่างโจทย์พร้อมเฉลยละเอียด (Midterm Edition)</p>
     </header>
 
     <div class="nav-container">
@@ -280,233 +263,250 @@
     <div class="container">
 
         <section id="sol">
-            [span_0](start_span)<h2><i class="fas fa-flask"></i> 1. สารละลาย (Solutions)[span_0](end_span)</h2>
-            <p>เน้นหน่วยความเข้มข้นที่ต้องใช้คำนวณต่อในบทสมบัติคอลลิเกทีฟ</p>
-
-            <h3>1.1 หน่วยความเข้มข้น (Concentration)</h3>
+            <h2><i class="fas fa-flask"></i> 1. สารละลาย (Solutions)</h2>
             
-            <div class="formula-card">
-                <div class="formula-display">$$ M = \frac{\text{mol}}{L} $$</div>
-                <div class="var-list">
-                    <div class="var-item"><strong>M</strong> : Molarity (ความเข้มข้น mol/L)</div>
-                    <div class="var-item"><strong>mol</strong> : Moles of solute (โมลตัวถูกละลาย)</div>
-                    <div class="var-item"><strong>L</strong> : Volume of solution (ปริมาตรสารละลาย ลิตร)</div>
-                </div>
-            </div>
-
-            <div class="formula-card">
-                <div class="formula-display">$$ m = \frac{\text{mol}}{kg} $$</div>
-                <div class="var-list">
-                    <div class="var-item"><strong>m</strong> : Molality (ความเข้มข้น mol/kg)</div>
-                    <div class="var-item"><strong>kg</strong> : Mass of solvent (มวลตัวทำละลาย กิโลกรัม)</div>
-                </div>
-            </div>
-
+            <h3>1.1 การแปลงหน่วยความเข้มข้น</h3>
+            <p>สูตรสำคัญสำหรับการเตรียมสารละลายจากสารตั้งต้นที่มีความเข้มข้นเป็นร้อยละ</p>
+            
             <div class="example-box">
-                <span class="example-badge">โจทย์ 1: การเตรียมสารละลาย</span>
-                <strong>โจทย์:</strong> กรด \(HCl\) เข้มข้น 36.5% (w/w) ความหนาแน่น 1.18 g/mL ต้องการเตรียม 0.1 M ปริมาตร 500 mL ต้องใช้กรดกี่ mL? (MW=36.5)<br><br>
+                <span class="example-badge">โจทย์ 1: เตรียมสารละลายจากกรดเข้มข้น</span>
+                <p><strong>โจทย์:</strong> กรดไฮโดรคลอริก (\(HCl\)) เข้มข้น 36.5% โดยมวล (\(w/w\)) มีความหนาแน่น 1.18 g/mL ต้องการเตรียมสารละลายเข้มข้น 0.1 M ปริมาตร 500 mL จะต้องปิเปตต์กรดเข้มข้นมากี่ mL? (MW = 36.5)</p>
+                
+                <div class="var-note">
+                    <span class="var-title">📝 ตัวแปรน่ารู้ในข้อนี้:</span>
+                    <span class="var-item"><span class="var-key">%</span> = ร้อยละโดยมวล (Percent by mass)</span>
+                    <span class="var-item"><span class="var-key">d</span> = ความหนาแน่น (Density, g/mL)</span>
+                    <span class="var-item"><span class="var-key">MW</span> = มวลโมเลกุล (Molecular Weight)</span>
+                    <span class="var-item"><span class="var-key">M</span> = โมลาริตี (Molarity, mol/L)</span>
+                </div>
+
                 <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
                     <li>
-                        <strong>หาความเข้มข้นเริ่มต้น (\(C_1\)):</strong> ใช้สูตรลัด \( M = \frac{\% \times 10 \times d}{MW} \)<br>
-                        \( C_1 = \frac{36.5 \times 10 \times 1.18}{36.5} = 11.8 \, M \)
+                        <strong>ขั้นที่ 1: เปลี่ยน % เป็น Molarity (\(M_1\))</strong><br>
+                        ใช้สูตรลัด: \( M = \frac{\% \times 10 \times d}{MW} \)<br>
+                        แทนค่า: \( M_1 = \frac{36.5 \times 10 \times 1.18}{36.5} = 11.8 \, M \)
                     </li>
                     <li>
-                        <strong>คำนวณการเจือจาง (\(C_1V_1 = C_2V_2\)):</strong><br>
+                        <strong>ขั้นที่ 2: คำนวณการเจือจาง (\(M_1V_1 = M_2V_2\))</strong><br>
                         \( (11.8)(V_1) = (0.1)(500) \)<br>
                         \( V_1 = \frac{50}{11.8} \approx 4.24 \, mL \)
                     </li>
                 </ul>
-                <strong>ตอบ:</strong> 4.24 mL
+                <p><strong>ตอบ:</strong> ต้องตวงกรดเข้มข้นมา <strong>4.24 mL</strong></p>
             </div>
 
-            <h3>1.2 สมบัติคอลลิเกทีฟ (Colligative Properties)</h3>
-            <p>สมบัติที่ขึ้นกับจำนวนอนุภาค หากเป็นสารอิเล็กโทรไลต์ต้องคูณค่า \(i\) (Van't Hoff Factor)</p>
+            <h3>1.2 สมบัติคอลลิเกทีฟ (Van't Hoff Factor)</h3>
             
-            <div class="formula-card">
-                <div class="formula-display">
-                    $$ \Delta T_f = i \cdot K_f \cdot m $$
-                    $$ \Delta T_b = i \cdot K_b \cdot m $$
-                </div>
-                <div class="var-list">
-                    <div class="var-item"><strong>\(\Delta T\)</strong> : Change in temp (อุณหภูมิที่เปลี่ยนไป)</div>
-                    <div class="var-item"><strong>i</strong> : Van't Hoff factor (จำนวนอนุภาคหลังแตกตัว)</div>
-                    <div class="var-item"><strong>K</strong> : Constant (ค่าคงที่ของตัวทำละลาย)</div>
-                    <div class="var-item"><strong>m</strong> : Molality (mol/kg)</div>
-                </div>
-            </div>
-
             <div class="example-box">
-                <span class="example-badge">โจทย์ 2: จุดเยือกแข็งลดลง</span>
-                <strong>โจทย์:</strong> ละลาย \(MgCl_2\) 0.5 โมล ในน้ำ 1 kg (\(K_f=1.86\)) จงหาจุดเยือกแข็งใหม่ (จุดเยือกแข็งน้ำ = 0°C)<br><br>
+                <span class="example-badge">โจทย์ 2: จุดเยือกแข็งลดลง (สารอิเล็กโทรไลต์)</span>
+                <p><strong>โจทย์:</strong> ละลายแมกนีเซียมคลอไรด์ (\(MgCl_2\)) จำนวน 0.5 โมล ในน้ำ 1 kg กำหนดให้ค่าคงที่ \(K_f\) ของน้ำเท่ากับ 1.86 °C/m จงหาจุดเยือกแข็งใหม่ของสารละลายนี้</p>
+
+                <div class="var-note">
+                    <span class="var-title">📝 ตัวแปรน่ารู้ในข้อนี้:</span>
+                    <span class="var-item"><span class="var-key">\(\Delta T_f\)</span> = จุดเยือกแข็งที่ลดลง (Freezing point depression)</span>
+                    <span class="var-item"><span class="var-key">i</span> = Van't Hoff factor (จำนวนอนุภาคหลังแตกตัว)</span>
+                    <span class="var-item"><span class="var-key">K_f</span> = ค่าคงที่จุดเยือกแข็ง (Freezing point constant)</span>
+                    <span class="var-item"><span class="var-key">m</span> = โมลาลิตี (Molality, mol/kg)</span>
+                </div>
+
                 <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
                     <li>
-                        <strong>หาค่า \(i\):</strong> \(MgCl_2 \rightarrow Mg^{2+} + 2Cl^-\) (แตกได้ 3 ไอออน) \(\Rightarrow i=3\)
+                        <strong>หาค่า \(i\):</strong><br>
+                        สมการแตกตัว: \( MgCl_2 \rightarrow Mg^{2+} + 2Cl^- \)<br>
+                        ได้ไอออนทั้งหมด \(1 + 2 = 3\) ตัว ดังนั้น <strong>\( i = 3 \)</strong>
                     </li>
                     <li>
-                        <strong>คำนวณ \(\Delta T_f\):</strong><br>
-                        \( \Delta T_f = (3) \times (1.86) \times (0.5) = 2.79^\circ C \)
+                        <strong>คำนวณการลดลงของอุณหภูมิ (\(\Delta T_f\)):</strong><br>
+                        สูตร: \( \Delta T_f = i \cdot K_f \cdot m \)<br>
+                        แทนค่า: \( \Delta T_f = 3 \times 1.86 \times 0.5 = 2.79^\circ C \)
                     </li>
                     <li>
-                        <strong>หาจุดเยือกแข็งใหม่:</strong> (ต้องต่ำลง)<br>
-                        \( 0 - 2.79 = \mathbf{-2.79^\circ C} \)
+                        <strong>หาจุดเยือกแข็งใหม่:</strong><br>
+                        จุดเยือกแข็งน้ำบริสุทธิ์ = 0°C<br>
+                        \( T_{ใหม่} = 0 - 2.79 = \mathbf{-2.79^\circ C} \)
                     </li>
                 </ul>
             </div>
         </section>
 
         <section id="thermo">
-            [span_1](start_span)<h2><i class="fas fa-fire-alt"></i> 2. อุณหพลศาสตร์ (Thermodynamics)[span_1](end_span)</h2>
-            <p>พลังงานและความเป็นไปได้ในการเกิดปฏิกิริยา</p>
+            <h2><i class="fas fa-fire-alt"></i> 2. อุณหพลศาสตร์ (Thermodynamics)</h2>
 
             <h3>2.1 กฎข้อที่ 1 และงาน (Work)</h3>
-            <div class="formula-card">
-                <div class="formula-display">$$ \Delta E = q + w $$</div>
-                <div class="var-list">
-                    <div class="var-item"><strong>\(\Delta E\)</strong> : Internal Energy Change (พลังงานภายใน)</div>
-                    <div class="var-item"><strong>q</strong> : Heat (ความร้อน, +ดูด/-คาย)</div>
-                    <div class="var-item"><strong>w</strong> : Work (งาน)</div>
-                </div>
-            </div>
-            <div class="formula-card">
-                <div class="formula-display">$$ w = -P\Delta V $$</div>
-                <div class="var-list">
-                    <div class="var-item"><strong>P</strong> : Pressure (ความดัน atm)</div>
-                    <div class="var-item"><strong>\(\Delta V\)</strong> : Volume Change (ปริมาตรเปลี่ยน ลิตร)</div>
-                </div>
-            </div>
-
+            
             <div class="example-box">
-                <span class="example-badge">โจทย์ 3: คำนวณงาน (Work)</span>
-                <strong>โจทย์:</strong> แก๊สขยายตัวจาก 2 L เป็น 5 L ต้านความดัน 2 atm จงหางานในหน่วยจูล (1 L·atm = 101.3 J)<br><br>
+                <span class="example-badge">โจทย์ 3: คำนวณงานจากการขยายตัว</span>
+                <p><strong>โจทย์:</strong> แก๊สอุดมคติขยายตัวจากปริมาตร 2.0 ลิตร เป็น 5.0 ลิตร ภายใต้ความดันคงที่ 2.0 atm จงคำนวณงานที่เกี่ยวข้องในหน่วยจูล (J)</p>
+
+                <div class="var-note">
+                    <span class="var-title">📝 ตัวแปรน่ารู้ในข้อนี้:</span>
+                    <span class="var-item"><span class="var-key">w</span> = งาน (Work, หน่วย Joule)</span>
+                    <span class="var-item"><span class="var-key">P</span> = ความดัน (Pressure, หน่วย atm)</span>
+                    <span class="var-item"><span class="var-key">\(\Delta V\)</span> = การเปลี่ยนแปลงปริมาตร (\(V_{final} - V_{initial}\))</span>
+                    <span class="var-item"><span class="var-key">Conversion</span> = 1 L·atm = 101.3 J</span>
+                </div>
+
                 <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
                     <li>
-                        <strong>แทนค่าสูตร:</strong> \( w = -(2 \text{ atm}) \times (5 - 2 \text{ L}) = -6 \text{ L}\cdot\text{atm} \)
+                        <strong>คำนวณ \(\Delta V\):</strong><br>
+                        \( \Delta V = 5.0 - 2.0 = 3.0 \, L \)
                     </li>
                     <li>
-                        <strong>แปลงหน่วย:</strong> \( -6 \times 101.3 = \mathbf{-607.8 \text{ J}} \)
+                        <strong>คำนวณงานในหน่วย L·atm:</strong><br>
+                        สูตร: \( w = -P\Delta V \) (เครื่องหมายลบ เพราะระบบขยายตัวทำงานให้สิ่งแวดล้อม)<br>
+                        \( w = -(2.0 \, atm)(3.0 \, L) = -6.0 \, L\cdot atm \)
+                    </li>
+                    <li>
+                        <strong>แปลงหน่วยเป็น Joule:</strong><br>
+                        \( w = -6.0 \times 101.3 = \mathbf{-607.8 \, J} \)
                     </li>
                 </ul>
             </div>
 
             <h3>2.2 พลังงานอิสระกิบส์ (\(\Delta G\))</h3>
-            <p>ตัวชี้วัดความสามารถในการเกิดปฏิกิริยาเอง (Spontaneity)</p>
-            <div class="formula-card">
-                <div class="formula-display">$$ \Delta G = \Delta H - T\Delta S $$</div>
-                <div class="var-list">
-                    <div class="var-item"><strong>\(\Delta G\)</strong> : Gibbs Free Energy (kJ)</div>
-                    <div class="var-item"><strong>\(\Delta H\)</strong> : Enthalpy (เอนทัลปี kJ)</div>
-                    <div class="var-item"><strong>T</strong> : Temperature (ต้องเป็น Kelvin)</div>
-                    <div class="var-item"><strong>\(\Delta S\)</strong> : Entropy (เอนโทรปี kJ/K)</div>
-                </div>
-            </div>
-
+            
             <div class="example-box">
-                <span class="example-badge">โจทย์ 4: ความเป็นไปได้ของปฏิกิริยา</span>
-                <strong>โจทย์:</strong> \(\Delta H = -92 \text{ kJ}\), \(\Delta S = -0.2 \text{ kJ/K}\) ที่ 25°C เกิดเองได้ไหม?<br><br>
+                <span class="example-badge">โจทย์ 4: ทำนายการเกิดปฏิกิริยา</span>
+                <p><strong>โจทย์:</strong> ปฏิกิริยา \( A \rightarrow B \) มีค่า \(\Delta H = -92 \, kJ\) และ \(\Delta S = -200 \, J/K\) ที่อุณหภูมิ 25°C ปฏิกิริยานี้เกิดขึ้นเองได้หรือไม่?</p>
+
+                <div class="var-note">
+                    <span class="var-title">📝 ตัวแปรน่ารู้ในข้อนี้:</span>
+                    <span class="var-item"><span class="var-key">\(\Delta G\)</span> = พลังงานอิสระกิบส์ (Gibbs Free Energy)</span>
+                    <span class="var-item"><span class="var-key">\(\Delta H\)</span> = เอนทัลปี (Enthalpy, kJ)</span>
+                    <span class="var-item"><span class="var-key">\(\Delta S\)</span> = เอนโทรปี (Entropy, J/K ต้องแปลงเป็น kJ)</span>
+                    <span class="var-item"><span class="var-key">T</span> = อุณหภูมิ (Temperature, Kelvin)</span>
+                </div>
+
                 <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
                     <li>
-                        <strong>แปลง T เป็น Kelvin:</strong> \( 25 + 273 = 298 \text{ K} \)
+                        <strong>เตรียมหน่วยให้พร้อม:</strong><br>
+                        \( \Delta S = -200 \, J/K = -0.2 \, kJ/K \)<br>
+                        \( T = 25 + 273 = 298 \, K \)
                     </li>
                     <li>
-                        <strong>แทนค่า:</strong><br>
+                        <strong>แทนค่าในสมการกิบส์:</strong><br>
+                        สูตร: \( \Delta G = \Delta H - T\Delta S \)<br>
                         \( \Delta G = -92 - (298 \times -0.2) \)<br>
-                        \( \Delta G = -92 - (-59.6) = -32.4 \text{ kJ} \)
+                        \( \Delta G = -92 - (-59.6) \)<br>
+                        \( \Delta G = -32.4 \, kJ \)
+                    </li>
+                    <li>
+                        <strong>สรุปผล:</strong><br>
+                        เนื่องจากค่า \(\Delta G\) ติดลบ (\(< 0\)) แสดงว่า <strong>ปฏิกิริยาเกิดขึ้นเองได้ (Spontaneous)</strong>
                     </li>
                 </ul>
-                <strong>ตอบ:</strong> \(\Delta G < 0\) ดังนั้น <strong>ปฏิกิริยาเกิดเองได้</strong>
             </div>
         </section>
 
         <section id="kinetics">
-            [span_2](start_span)<h2><i class="fas fa-stopwatch"></i> 3. จลนพลศาสตร์ (Kinetics)[span_2](end_span)</h2>
+            <h2><i class="fas fa-stopwatch"></i> 3. จลนพลศาสตร์ (Kinetics)</h2>
 
-            <h3>3.1 กฎอัตรา (Rate Law)</h3>
-            <div class="formula-card">
-                <div class="formula-display">$$ Rate = k[A]^m[B]^n $$</div>
-                <div class="var-list">
-                    <div class="var-item"><strong>k</strong> : Rate constant (ค่าคงที่อัตรา)</div>
-                    <div class="var-item"><strong>[ ]</strong> : Concentration (ความเข้มข้น M)</div>
-                    <div class="var-item"><strong>m, n</strong> : Order of reaction (อันดับปฏิกิริยา)</div>
-                </div>
-            </div>
-
+            <h3>3.1 การหากฎอัตรา (Rate Law)</h3>
+            
             <div class="example-box">
-                <span class="example-badge">โจทย์ 5: หาอันดับปฏิกิริยา</span>
+                <span class="example-badge">โจทย์ 5: หาอันดับปฏิกิริยาจากตาราง</span>
+                <p><strong>ข้อมูลการทดลอง:</strong></p>
                 <div class="table-responsive">
                     <table style="background: white;">
-                        <tr><th>Exp</th><th>[A]</th><th>[B]</th><th>Rate</th></tr>
-                        <tr><td>1</td><td>0.1</td><td>0.1</td><td>2.0</td></tr>
-                        <tr><td>2</td><td>0.2</td><td>0.1</td><td>4.0</td></tr>
-                        <tr><td>3</td><td>0.1</td><td>0.2</td><td>8.0</td></tr>
+                        <tr><th>Exp</th><th>[A] (M)</th><th>[B] (M)</th><th>Rate (M/s)</th></tr>
+                        <tr><td>1</td><td>0.10</td><td>0.10</td><td>\(2.0 \times 10^{-3}\)</td></tr>
+                        <tr><td>2</td><td>0.20</td><td>0.10</td><td>\(4.0 \times 10^{-3}\)</td></tr>
+                        <tr><td>3</td><td>0.10</td><td>0.20</td><td>\(8.0 \times 10^{-3}\)</td></tr>
                     </table>
                 </div>
+
+                <div class="var-note">
+                    <span class="var-title">📝 ตัวแปรน่ารู้ในข้อนี้:</span>
+                    <span class="var-item"><span class="var-key">k</span> = ค่าคงที่อัตรา (Rate constant)</span>
+                    <span class="var-item"><span class="var-key">m, n</span> = อันดับปฏิกิริยา (Order of reaction)</span>
+                    <span class="var-item"><span class="var-key">[ ]</span> = ความเข้มข้น (Concentration, M)</span>
+                </div>
+
                 <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
-                    <li>เทียบ 1&2: [A] เพิ่ม 2 เท่า, Rate เพิ่ม 2 เท่า \(\rightarrow\) <strong>อันดับ 1 (A)</strong></li>
-                    <li>เทียบ 1&3: [B] เพิ่ม 2 เท่า, Rate เพิ่ม 4 เท่า (\(2^2=4\)) \(\rightarrow\) <strong>อันดับ 2 (B)</strong></li>
+                    <li>
+                        <strong>หาอันดับของ A (\(m\)):</strong> เปรียบเทียบการทดลองที่ 1 และ 2 (ให้ B คงที่)<br>
+                        - [A] เพิ่มขึ้น 2 เท่า (\(0.1 \rightarrow 0.2\))<br>
+                        - Rate เพิ่มขึ้น 2 เท่า (\(2.0 \rightarrow 4.0\))<br>
+                        - ดังนั้น \( 2^m = 2 \Rightarrow m = 1 \) (อันดับ 1)
+                    </li>
+                    <li>
+                        <strong>หาอันดับของ B (\(n\)):</strong> เปรียบเทียบการทดลองที่ 1 และ 3 (ให้ A คงที่)<br>
+                        - [B] เพิ่มขึ้น 2 เท่า (\(0.1 \rightarrow 0.2\))<br>
+                        - Rate เพิ่มขึ้น 4 เท่า (\(2.0 \rightarrow 8.0\))<br>
+                        - ดังนั้น \( 2^n = 4 \Rightarrow n = 2 \) (อันดับ 2)
+                    </li>
+                    <li>
+                        <strong>สรุปกฎอัตรา:</strong> \( Rate = k[A][B]^2 \)
+                    </li>
                 </ul>
-                <strong>ตอบ:</strong> \( Rate = k[A][B]^2 \)
             </div>
 
-            <h3>3.2 ครึ่งชีวิต (Half-life) อันดับ 1</h3>
-            <div class="formula-card">
-                <div class="formula-display">$$ t_{1/2} = \frac{0.693}{k} $$</div>
-                <div class="var-list">
-                    <div class="var-item"><strong>\(t_{1/2}\)</strong> : Half-life (เวลาครึ่งชีวิต)</div>
-                    <div class="var-item"><strong>k</strong> : Rate constant (ค่าคงที่)</div>
-                </div>
-            </div>
-
+            <h3>3.2 ครึ่งชีวิต (Half-life)</h3>
             <div class="example-box">
                 <span class="example-badge">โจทย์ 6: การสลายตัวสารกัมมันตรังสี</span>
-                <strong>โจทย์:</strong> สาร X (อันดับ 1) มี \(k = 0.1 \text{ s}^{-1}\) จะใช้เวลากี่วินาทีเพื่อให้เหลือสาร 12.5% ของเริ่มต้น?<br><br>
+                <p><strong>โจทย์:</strong> ไอโซโทป X สลายตัวแบบอันดับ 1 มีค่าคงที่ \(k = 0.0693 \, \text{min}^{-1}\) จะต้องใช้เวลานานเท่าใดสารจึงจะเหลือปริมาณ 12.5% ของเริ่มต้น?</p>
+
+                <div class="var-note">
+                    <span class="var-title">📝 ตัวแปรน่ารู้ในข้อนี้:</span>
+                    <span class="var-item"><span class="var-key">t_{1/2}</span> = ครึ่งชีวิต (Half-life)</span>
+                    <span class="var-item"><span class="var-key">k</span> = ค่าคงที่อัตรา (Rate constant)</span>
+                </div>
+
                 <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
                     <li>
-                        <strong>หาครึ่งชีวิต:</strong> \( t_{1/2} = 0.693 / 0.1 = 6.93 \text{ s} \)
+                        <strong>หาครึ่งชีวิต (\(t_{1/2}\)):</strong><br>
+                        สูตรอันดับ 1: \( t_{1/2} = \frac{0.693}{k} \)<br>
+                        \( t_{1/2} = \frac{0.693}{0.0693} = 10 \, \text{นาที} \)
                     </li>
                     <li>
-                        <strong>นับรอบการสลายตัว:</strong><br>
-                        100% \(\xrightarrow{1}\) 50% \(\xrightarrow{2}\) 25% \(\xrightarrow{3}\) 12.5%<br>
-                        (ผ่านไป 3 รอบครึ่งชีวิต)
+                        <strong>นับจำนวนรอบครึ่งชีวิต:</strong><br>
+                        \( 100\% \xrightarrow{1} 50\% \xrightarrow{2} 25\% \xrightarrow{3} 12.5\% \)<br>
+                        สารลดลงเหลือ 12.5% ต้องผ่านทั้งหมด <strong>3 รอบ</strong>
                     </li>
                     <li>
-                        <strong>คำนวณเวลารวม:</strong> \( 3 \times 6.93 = \mathbf{20.79 \text{ s}} \)
+                        <strong>คำนวณเวลารวม:</strong><br>
+                        \( Time = 3 \times t_{1/2} = 3 \times 10 = \mathbf{30 \, \text{นาที}} \)
                     </li>
                 </ul>
             </div>
         </section>
 
-        <section id="equilibrium">
-            [span_3](start_span)<h2><i class="fas fa-balance-scale"></i> 4. สมดุลเคมี (Equilibrium)[span_3](end_span)</h2>
+        <section id="eq">
+            <h2><i class="fas fa-balance-scale"></i> 4. สมดุลเคมี (Equilibrium)</h2>
 
-            <h3>4.1 ความสัมพันธ์ \(K_p\) และ \(K_c\)</h3>
-            <div class="formula-card">
-                <div class="formula-display">$$ K_p = K_c(RT)^{\Delta n} $$</div>
-                <div class="var-list">
-                    <div class="var-item"><strong>K_p</strong> : Pressure Equilibrium Constant</div>
-                    <div class="var-item"><strong>K_c</strong> : Concentration Equilibrium Constant</div>
-                    <div class="var-item"><strong>R</strong> : Gas Constant (0.0821)</div>
-                    <div class="var-item"><strong>\(\Delta n\)</strong> : mol gas (Prod) - mol gas (React)</div>
-                </div>
-            </div>
-
+            <h3>4.1 ความสัมพันธ์ Kp และ Kc</h3>
+            
             <div class="example-box">
-                <span class="example-badge">โจทย์ 7: คำนวณ Kp</span>
-                <strong>โจทย์:</strong> \( 2SO_2(g) + O_2(g) \rightleftharpoons 2SO_3(g) \) ที่ 300 K มี \(K_c = 100\) จงหา \(K_p\)<br><br>
+                <span class="example-badge">โจทย์ 7: เปลี่ยน Kc เป็น Kp</span>
+                <p><strong>โจทย์:</strong> ปฏิกิริยา \( N_2(g) + 3H_2(g) \rightleftharpoons 2NH_3(g) \) มีค่า \(K_c = 0.5\) ที่อุณหภูมิ 300 K จงหาค่า \(K_p\) (กำหนด R = 0.082)</p>
+
+                <div class="var-note">
+                    <span class="var-title">📝 ตัวแปรน่ารู้ในข้อนี้:</span>
+                    <span class="var-item"><span class="var-key">K_p</span> = ค่าคงที่สมดุลความดัน</span>
+                    <span class="var-item"><span class="var-key">K_c</span> = ค่าคงที่สมดุลความเข้มข้น</span>
+                    <span class="var-item"><span class="var-key">\(\Delta n\)</span> = โมลแก๊สผลิตภัณฑ์ - โมลแก๊สสารตั้งต้น</span>
+                    <span class="var-item"><span class="var-key">R</span> = ค่าคงที่แก๊ส (0.0821 L·atm/mol·K)</span>
+                </div>
+
                 <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
                     <li>
-                        <strong>หา \(\Delta n\):</strong> \( 2 - (2+1) = -1 \)
+                        <strong>หา \(\Delta n\) ของแก๊ส:</strong><br>
+                        ด้านขวา (ผลิตภัณฑ์): 2 โมล<br>
+                        ด้านซ้าย (สารตั้งต้น): 1 + 3 = 4 โมล<br>
+                        \( \Delta n = 2 - 4 = -2 \)
                     </li>
                     <li>
-                        <strong>แทนค่า:</strong><br>
-                        \( K_p = 100 \times (0.082 \times 300)^{-1} \)<br>
-                        \( K_p = \frac{100}{24.6} \approx \mathbf{4.06} \)
+                        <strong>แทนค่าในสูตร \( K_p = K_c(RT)^{\Delta n} \):</strong><br>
+                        \( K_p = 0.5 \times (0.082 \times 300)^{-2} \)<br>
+                        \( K_p = 0.5 \times (24.6)^{-2} \)<br>
+                        \( K_p = \frac{0.5}{(24.6)^2} = \frac{0.5}{605.16} \approx \mathbf{8.26 \times 10^{-4}} \)
                     </li>
                 </ul>
             </div>
@@ -515,8 +515,8 @@
     </div>
 
     <footer>
-        <p>สร้างเพื่อการศึกษา: สรุปเตรียมสอบ Chemistry for Teachers 2</p>
-        <p style="font-size:0.8rem; margin-top:5px; opacity:0.7;">&copy; 2024 Final Revision</p>
+        <p>สร้างเพื่อการศึกษาเตรียมสอบ: Chemistry for Teachers 2</p>
+        <p style="font-size:0.8rem; margin-top:5px; opacity:0.7;">&copy; 2024 Final Revision Edition</p>
     </footer>
 
 </body>
