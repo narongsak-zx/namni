@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สรุปเข้ม เคมีสำหรับครู 2 (Midterm Edition)</title>
+    <title>สรุปเข้ม เคมีสำหรับครู 2 (Final Review)</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,12 +16,12 @@
 
     <style>
         :root {
-            --primary: #00695c;      /* สีหลัก (เขียวเข้ม) */
-            --secondary: #4db6ac;    /* สีรอง (เขียวอ่อน) */
-            --accent: #ff6f00;       /* สีเน้น (ส้ม) */
-            --bg-body: #f0f2f5;      /* พื้นหลัง */
-            --text-main: #37474f;
-            --text-light: #607d8b;
+            --primary: #1565c0;      /* Blue Dark */
+            --secondary: #42a5f5;    /* Blue Light */
+            --accent: #ff9800;       /* Orange */
+            --bg-body: #f5f7fa;
+            --text-main: #263238;
+            --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,13 +36,14 @@
 
         /* --- Header --- */
         header {
-            background: linear-gradient(135deg, var(--primary), #004d40);
+            background: linear-gradient(135deg, var(--primary), #0d47a1);
             color: white;
             padding: 60px 20px 40px;
             text-align: center;
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            margin-bottom: -30px;
             position: relative;
             z-index: 1;
         }
@@ -51,37 +52,31 @@
             font-family: 'Prompt', sans-serif;
             font-size: 2.2rem;
             margin-bottom: 10px;
-            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
+        
+        .subtitle { opacity: 0.9; font-weight: 300; }
 
-        .subtitle {
-            font-size: 1rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        /* --- Sticky Navigation (Mobile Friendly) --- */
+        /* --- Navigation --- */
         .nav-container {
             position: sticky;
             top: 15px;
             z-index: 100;
             display: flex;
             justify-content: center;
-            padding: 0 10px;
-            margin-top: -25px;
+            padding: 0 15px;
         }
 
         .nav-pills {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 8px;
+            padding: 10px;
             border-radius: 50px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             display: flex;
             gap: 5px;
             overflow-x: auto;
             max-width: 100%;
-            white-space: nowrap;
             scrollbar-width: none;
         }
         .nav-pills::-webkit-scrollbar { display: none; }
@@ -89,104 +84,125 @@
         .nav-item {
             text-decoration: none;
             color: var(--text-main);
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 25px;
             font-family: 'Prompt', sans-serif;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            white-space: nowrap;
             transition: all 0.3s ease;
         }
 
         .nav-item:hover, .nav-item.active {
             background-color: var(--primary);
             color: white;
-            transform: translateY(-1px);
         }
 
-        /* --- Content Layout --- */
+        /* --- Layout --- */
         .container {
-            max-width: 850px;
-            margin: 40px auto 0;
+            max-width: 900px;
+            margin: 50px auto 0;
             padding: 0 20px;
         }
 
         section {
             background: white;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: var(--card-shadow);
             border-top: 5px solid var(--secondary);
-            scroll-margin-top: 80px;
+            scroll-margin-top: 100px;
         }
 
         h2 {
             font-family: 'Prompt', sans-serif;
             color: var(--primary);
-            font-size: 1.6rem;
-            border-bottom: 2px solid #eceff1;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
+            border-bottom: 2px solid #eceff1;
+            padding-bottom: 15px;
         }
 
         h3 {
             font-family: 'Prompt', sans-serif;
-            color: #546e7a;
-            font-size: 1.25rem;
-            margin-top: 30px;
+            color: #455a64;
+            font-size: 1.4rem;
+            margin-top: 40px;
             margin-bottom: 15px;
-            font-weight: 600;
-            border-left: 4px solid var(--accent);
-            padding-left: 10px;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
         }
 
-        /* --- Custom Boxes --- */
+        /* --- Formula & Variables --- */
         .formula-card {
             background: #263238;
             color: #eceff1;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 20px 0;
-            text-align: center;
-            font-size: 1.1rem;
-            overflow-x: auto;
-            border: 1px solid #37474f;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 25px 0;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
+        .formula-display {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            overflow-x: auto;
+        }
+
+        .var-list {
+            border-top: 1px solid #455a64;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            color: #b0bec5;
+        }
+
+        .var-item strong {
+            color: #81d4fa; /* Light Blue for variable names */
+            font-family: 'Prompt', sans-serif;
+        }
+
+        /* --- Example Box --- */
         .example-box {
-            background-color: #fffde7;
-            border: 2px dashed #fbc02d;
+            background-color: #fff8e1;
+            border: 2px dashed #ffb74d;
             border-radius: 16px;
-            padding: 25px;
+            padding: 30px;
             margin: 30px 0;
             position: relative;
         }
 
         .example-badge {
             position: absolute;
-            top: -12px;
+            top: -15px;
             left: 20px;
             background: var(--accent);
             color: white;
-            padding: 4px 12px;
-            border-radius: 12px;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-family: 'Prompt', sans-serif;
-            font-size: 0.8rem;
             font-weight: bold;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            font-size: 0.9rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
+        /* --- Step List --- */
         .step-list {
             list-style: none;
             counter-reset: steps;
-            margin-top: 15px;
+            margin-top: 20px;
         }
         .step-list li {
             position: relative;
-            padding-left: 40px;
-            margin-bottom: 15px;
+            padding-left: 45px;
+            margin-bottom: 20px;
         }
         .step-list li::before {
             counter-increment: steps;
@@ -194,13 +210,13 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 28px;
-            height: 28px;
+            width: 30px;
+            height: 30px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
             text-align: center;
-            line-height: 28px;
+            line-height: 30px;
             font-weight: bold;
             font-size: 0.9rem;
         }
@@ -209,41 +225,39 @@
         .table-responsive {
             overflow-x: auto;
             margin: 20px 0;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid #cfd8dc;
         }
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px; /* บังคับให้เลื่อนแนวนอนในมือถือ */
+            min-width: 600px;
         }
         th {
             background-color: #eceff1;
             font-family: 'Prompt', sans-serif;
-            font-weight: 600;
-            padding: 12px;
+            padding: 15px;
             text-align: left;
             color: var(--text-main);
         }
         td {
-            padding: 12px;
+            padding: 15px;
             border-top: 1px solid #cfd8dc;
         }
 
         /* --- Footer --- */
         footer {
             text-align: center;
-            color: var(--text-light);
+            color: #90a4ae;
             font-size: 0.9rem;
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
-        /* --- Mobile Tweaks --- */
+        /* --- Mobile --- */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
-            section { padding: 20px; }
-            .nav-pills { gap: 2px; }
-            .example-box { padding: 20px 15px; }
+            section { padding: 25px 20px; }
+            .var-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -251,245 +265,258 @@
 
     <header>
         <h1>สรุปเข้ม เคมีสำหรับครู 2</h1>
-        <p class="subtitle">เนื้อหาเจาะลึก + ตะลุยโจทย์เตรียมสอบกลางภาค</p>
+        <p class="subtitle">Midterm Review: Solutions, Thermodynamics, Kinetics, Equilibrium</p>
     </header>
 
     <div class="nav-container">
         <div class="nav-pills">
-            <a href="#solutions" class="nav-item">1. สารละลาย</a>
+            <a href="#sol" class="nav-item">1. สารละลาย</a>
             <a href="#thermo" class="nav-item">2. อุณหพลศาสตร์</a>
             <a href="#kinetics" class="nav-item">3. จลนพลศาสตร์</a>
-            <a href="#equilibrium" class="nav-item">4. สมดุลเคมี</a>
-            <a href="#appendix" class="nav-item">5. คำศัพท์</a>
+            <a href="#eq" class="nav-item">4. สมดุลเคมี</a>
         </div>
     </div>
 
     <div class="container">
 
-        <section id="solutions">
-            <h2><i class="fas fa-flask"></i> 1. สารละลาย (Solutions)</h2>
-            [span_0](start_span)<p>เนื้อหาบทนี้เป็นพื้นฐานสำคัญของการคำนวณเคมีทั้งหมด[span_0](end_span)</p>
+        <section id="sol">
+            [span_0](start_span)<h2><i class="fas fa-flask"></i> 1. สารละลาย (Solutions)[span_0](end_span)</h2>
+            <p>เน้นหน่วยความเข้มข้นที่ต้องใช้คำนวณต่อในบทสมบัติคอลลิเกทีฟ</p>
 
-            <h3>1.1 การแปลงหน่วยความเข้มข้น</h3>
+            <h3>1.1 หน่วยความเข้มข้น (Concentration)</h3>
+            
             <div class="formula-card">
-                $$ M = \frac{\% \times 10 \times d}{MW} $$
-                <small>(สูตรลัด: แปลง % โดยมวล เป็น Molarity)</small>
+                <div class="formula-display">$$ M = \frac{\text{mol}}{L} $$</div>
+                <div class="var-list">
+                    <div class="var-item"><strong>M</strong> : Molarity (ความเข้มข้น mol/L)</div>
+                    <div class="var-item"><strong>mol</strong> : Moles of solute (โมลตัวถูกละลาย)</div>
+                    <div class="var-item"><strong>L</strong> : Volume of solution (ปริมาตรสารละลาย ลิตร)</div>
+                </div>
+            </div>
+
+            <div class="formula-card">
+                <div class="formula-display">$$ m = \frac{\text{mol}}{kg} $$</div>
+                <div class="var-list">
+                    <div class="var-item"><strong>m</strong> : Molality (ความเข้มข้น mol/kg)</div>
+                    <div class="var-item"><strong>kg</strong> : Mass of solvent (มวลตัวทำละลาย กิโลกรัม)</div>
+                </div>
             </div>
 
             <div class="example-box">
-                <span class="example-badge">โจทย์ 1: เตรียมสารละลาย (Dilution)</span>
-                <strong>โจทย์:</strong> กรด \(HNO_3\) เข้มข้น 63% (w/w) ความหนาแน่น 1.4 g/mL ต้องการเตรียม 0.1 M ปริมาตร 500 mL ต้องใช้กรดกี่ mL? (MW=63)<br><br>
+                <span class="example-badge">โจทย์ 1: การเตรียมสารละลาย</span>
+                <strong>โจทย์:</strong> กรด \(HCl\) เข้มข้น 36.5% (w/w) ความหนาแน่น 1.18 g/mL ต้องการเตรียม 0.1 M ปริมาตร 500 mL ต้องใช้กรดกี่ mL? (MW=36.5)<br><br>
                 <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
                     <li>
-                        <strong>หาความเข้มข้นเริ่มต้น (\(M_1\)):</strong><br>
-                        \( M_1 = \frac{63 \times 10 \times 1.4}{63} = 14 \, M \)
+                        <strong>หาความเข้มข้นเริ่มต้น (\(C_1\)):</strong> ใช้สูตรลัด \( M = \frac{\% \times 10 \times d}{MW} \)<br>
+                        \( C_1 = \frac{36.5 \times 10 \times 1.18}{36.5} = 11.8 \, M \)
                     </li>
                     <li>
-                        <strong>คำนวณการเจือจาง (\(M_1V_1 = M_2V_2\)):</strong><br>
-                        \( (14)(V_1) = (0.1)(500) \)<br>
-                        \( V_1 = \frac{50}{14} \approx 3.57 \, mL \)
+                        <strong>คำนวณการเจือจาง (\(C_1V_1 = C_2V_2\)):</strong><br>
+                        \( (11.8)(V_1) = (0.1)(500) \)<br>
+                        \( V_1 = \frac{50}{11.8} \approx 4.24 \, mL \)
                     </li>
                 </ul>
-                <strong>ตอบ:</strong> ต้องปิเปตต์กรดเข้มข้นมา <strong>3.57 mL</strong> แล้วปรับปริมาตรด้วยน้ำ
+                <strong>ตอบ:</strong> 4.24 mL
             </div>
 
-            <h3>1.2 สมบัติคอลลิเกทีฟและ Van't Hoff Factor (\(i\))</h3>
-            <p>ต้องคูณค่า \(i\) เมื่อสารเป็นอิเล็กโทรไลต์ (แตกตัวเป็นไอออน)</p>
+            <h3>1.2 สมบัติคอลลิเกทีฟ (Colligative Properties)</h3>
+            <p>สมบัติที่ขึ้นกับจำนวนอนุภาค หากเป็นสารอิเล็กโทรไลต์ต้องคูณค่า \(i\) (Van't Hoff Factor)</p>
+            
             <div class="formula-card">
-                $$ \Delta T_f = i \cdot K_f \cdot m $$
+                <div class="formula-display">
+                    $$ \Delta T_f = i \cdot K_f \cdot m $$
+                    $$ \Delta T_b = i \cdot K_b \cdot m $$
+                </div>
+                <div class="var-list">
+                    <div class="var-item"><strong>\(\Delta T\)</strong> : Change in temp (อุณหภูมิที่เปลี่ยนไป)</div>
+                    <div class="var-item"><strong>i</strong> : Van't Hoff factor (จำนวนอนุภาคหลังแตกตัว)</div>
+                    <div class="var-item"><strong>K</strong> : Constant (ค่าคงที่ของตัวทำละลาย)</div>
+                    <div class="var-item"><strong>m</strong> : Molality (mol/kg)</div>
+                </div>
             </div>
 
             <div class="example-box">
-                <span class="example-badge">โจทย์ 2: เปรียบเทียบจุดเยือกแข็ง</span>
-                <strong>โจทย์:</strong> สารละลายใดมีจุดเยือกแข็ง <strong>ต่ำที่สุด</strong> (ความเข้มข้น 1 m เท่ากัน)?<br>
-                ก. กลูโคส (\(i=1\)) <br>
-                ข. \(NaCl\) (\(i=2\)) <br>
-                ค. \(Na_2SO_4\) (\(i=3\)) <br><br>
-                <strong>วิเคราะห์:</strong>
-                <ul>
-                    <li>\(\Delta T_f\) แปรผันตรงกับ \(i\) (ยิ่ง \(i\) มาก \(\Delta T\) ยิ่งมาก)</li>
-                    <li>จุดเยือกแข็ง = \(T_0 - \Delta T_f\) (ยิ่งลบมาก ยิ่งต่ำ)</li>
-                    <li>\(Na_2SO_4\) มี \(i=3\) มากที่สุด \(\rightarrow\) จุดเยือกแข็งต่ำที่สุด</li>
+                <span class="example-badge">โจทย์ 2: จุดเยือกแข็งลดลง</span>
+                <strong>โจทย์:</strong> ละลาย \(MgCl_2\) 0.5 โมล ในน้ำ 1 kg (\(K_f=1.86\)) จงหาจุดเยือกแข็งใหม่ (จุดเยือกแข็งน้ำ = 0°C)<br><br>
+                <strong>วิธีทำละเอียด:</strong>
+                <ul class="step-list">
+                    <li>
+                        <strong>หาค่า \(i\):</strong> \(MgCl_2 \rightarrow Mg^{2+} + 2Cl^-\) (แตกได้ 3 ไอออน) \(\Rightarrow i=3\)
+                    </li>
+                    <li>
+                        <strong>คำนวณ \(\Delta T_f\):</strong><br>
+                        \( \Delta T_f = (3) \times (1.86) \times (0.5) = 2.79^\circ C \)
+                    </li>
+                    <li>
+                        <strong>หาจุดเยือกแข็งใหม่:</strong> (ต้องต่ำลง)<br>
+                        \( 0 - 2.79 = \mathbf{-2.79^\circ C} \)
+                    </li>
                 </ul>
-                <strong>ตอบ:</strong> \(Na_2SO_4\)
             </div>
         </section>
 
         <section id="thermo">
-            <h2><i class="fas fa-fire"></i> 2. อุณหพลศาสตร์ (Thermodynamics)</h2>
-            [span_1](start_span)[span_2](start_span)<p>ศึกษาการถ่ายเทพลังงานและความเป็นไปได้ในการเกิดปฏิกิริยา[span_1](end_span)[span_2](end_span)</p>
+            [span_1](start_span)<h2><i class="fas fa-fire-alt"></i> 2. อุณหพลศาสตร์ (Thermodynamics)[span_1](end_span)</h2>
+            <p>พลังงานและความเป็นไปได้ในการเกิดปฏิกิริยา</p>
 
-            <h3>2.1 กฎข้อที่ 1: งานและความร้อน</h3>
+            <h3>2.1 กฎข้อที่ 1 และงาน (Work)</h3>
             <div class="formula-card">
-                $$ \Delta E = q + w $$
-                $$ w = -P\Delta V $$
+                <div class="formula-display">$$ \Delta E = q + w $$</div>
+                <div class="var-list">
+                    <div class="var-item"><strong>\(\Delta E\)</strong> : Internal Energy Change (พลังงานภายใน)</div>
+                    <div class="var-item"><strong>q</strong> : Heat (ความร้อน, +ดูด/-คาย)</div>
+                    <div class="var-item"><strong>w</strong> : Work (งาน)</div>
+                </div>
             </div>
-            [span_3](start_span)<p><strong>เทคนิคจำ:</strong> ถ้าระบบขยายตัว (\(\Delta V > 0\)) คือระบบดันสิ่งแวดล้อมออก (เสียพลังงาน) งาน \(w\) ติดลบ[span_3](end_span)</p>
+            <div class="formula-card">
+                <div class="formula-display">$$ w = -P\Delta V $$</div>
+                <div class="var-list">
+                    <div class="var-item"><strong>P</strong> : Pressure (ความดัน atm)</div>
+                    <div class="var-item"><strong>\(\Delta V\)</strong> : Volume Change (ปริมาตรเปลี่ยน ลิตร)</div>
+                </div>
+            </div>
 
-            <h3>2.2 กฎของเฮสส์ (Hess's Law)</h3>
             <div class="example-box">
-                <span class="example-badge">โจทย์ 3: คำนวณ \(\Delta H\) รวม</span>
-                <strong>กำหนดปฏิกิริยาย่อย:</strong><br>
-                (1) \( S(s) + O_2(g) \rightarrow SO_2(g) \quad \Delta H = -297 \, kJ \)<br>
-                (2) \( 2SO_3(g) \rightarrow 2SO_2(g) + O_2(g) \quad \Delta H = +198 \, kJ \)<br>
-                <strong>จงหา \(\Delta H\) ของ:</strong> \( 2S(s) + 3O_2(g) \rightarrow 2SO_3(g) \)<br><br>
+                <span class="example-badge">โจทย์ 3: คำนวณงาน (Work)</span>
+                <strong>โจทย์:</strong> แก๊สขยายตัวจาก 2 L เป็น 5 L ต้านความดัน 2 atm จงหางานในหน่วยจูล (1 L·atm = 101.3 J)<br><br>
                 <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
                     <li>
-                        <strong>จัดรูปสมการ (1):</strong> คูณ 2 ตลอด (เพื่อให้ได้ \(2S\))<br>
-                        \( 2S + 2O_2 \rightarrow 2SO_2 \quad \Delta H = 2(-297) = -594 \, kJ \)
+                        <strong>แทนค่าสูตร:</strong> \( w = -(2 \text{ atm}) \times (5 - 2 \text{ L}) = -6 \text{ L}\cdot\text{atm} \)
                     </li>
                     <li>
-                        <strong>จัดรูปสมการ (2):</strong> กลับสมการ (เพื่อให้ \(2SO_3\) ไปอยู่ขวา)<br>
-                        \( 2SO_2 + O_2 \rightarrow 2SO_3 \quad \Delta H = -198 \, kJ \) (เครื่องหมายเปลี่ยน)
-                    </li>
-                    <li>
-                        <strong>รวมสมการ:</strong> ตัด \(2SO_2\) ทิ้ง<br>
-                        \( 2S + (2+1)O_2 \rightarrow 2SO_3 \)<br>
-                        \( \Delta H_{total} = -594 + (-198) = -792 \, kJ \)
+                        <strong>แปลงหน่วย:</strong> \( -6 \times 101.3 = \mathbf{-607.8 \text{ J}} \)
                     </li>
                 </ul>
-                <strong>ตอบ:</strong> \(-792 \, kJ\)
             </div>
 
-            <h3>2.3 พลังงานอิสระกิบส์ (\(\Delta G\))</h3>
-            [span_4](start_span)<p>ใช้ทำนายปฏิกิริยา (\(\Delta G < 0\) คือเกิดเองได้)[span_4](end_span)</p>
+            <h3>2.2 พลังงานอิสระกิบส์ (\(\Delta G\))</h3>
+            <p>ตัวชี้วัดความสามารถในการเกิดปฏิกิริยาเอง (Spontaneity)</p>
             <div class="formula-card">
-                $$ \Delta G = \Delta H - T\Delta S $$
+                <div class="formula-display">$$ \Delta G = \Delta H - T\Delta S $$</div>
+                <div class="var-list">
+                    <div class="var-item"><strong>\(\Delta G\)</strong> : Gibbs Free Energy (kJ)</div>
+                    <div class="var-item"><strong>\(\Delta H\)</strong> : Enthalpy (เอนทัลปี kJ)</div>
+                    <div class="var-item"><strong>T</strong> : Temperature (ต้องเป็น Kelvin)</div>
+                    <div class="var-item"><strong>\(\Delta S\)</strong> : Entropy (เอนโทรปี kJ/K)</div>
+                </div>
             </div>
 
             <div class="example-box">
-                <span class="example-badge">โจทย์ 4: หาอุณหภูมิที่สมดุล</span>
-                <strong>โจทย์:</strong> ปฏิกิริยามี \(\Delta H = +30 \, kJ\) และ \(\Delta S = +100 \, J/K\) จะเริ่มเกิดเองได้ที่อุณหภูมิใด?<br><br>
-                <strong>วิธีทำ:</strong>
+                <span class="example-badge">โจทย์ 4: ความเป็นไปได้ของปฏิกิริยา</span>
+                <strong>โจทย์:</strong> \(\Delta H = -92 \text{ kJ}\), \(\Delta S = -0.2 \text{ kJ/K}\) ที่ 25°C เกิดเองได้ไหม?<br><br>
+                <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
-                    <li><strong>แปลงหน่วย:</strong> \(\Delta S = 0.1 \, kJ/K\)</li>
-                    <li><strong>ตั้งสมการสมดุล (\(\Delta G = 0\)):</strong><br>
-                        \( 0 = 30 - T(0.1) \)<br>
-                        \( T = 30 / 0.1 = 300 \, K \)
+                    <li>
+                        <strong>แปลง T เป็น Kelvin:</strong> \( 25 + 273 = 298 \text{ K} \)
+                    </li>
+                    <li>
+                        <strong>แทนค่า:</strong><br>
+                        \( \Delta G = -92 - (298 \times -0.2) \)<br>
+                        \( \Delta G = -92 - (-59.6) = -32.4 \text{ kJ} \)
                     </li>
                 </ul>
-                <strong>ตอบ:</strong> ต้องใช้อุณหภูมิ <strong>มากกว่า 300 K</strong>
+                <strong>ตอบ:</strong> \(\Delta G < 0\) ดังนั้น <strong>ปฏิกิริยาเกิดเองได้</strong>
             </div>
         </section>
 
         <section id="kinetics">
-            <h2><i class="fas fa-stopwatch"></i> 3. จลนพลศาสตร์ (Kinetics)</h2>
-            [span_5](start_span)<p>ศึกษาอัตราการเกิดปฏิกิริยาและกลไก[span_5](end_span)</p>
+            [span_2](start_span)<h2><i class="fas fa-stopwatch"></i> 3. จลนพลศาสตร์ (Kinetics)[span_2](end_span)</h2>
 
-            <h3>3.1 การหากฎอัตรา (Initial Rates Method)</h3>
-            [span_6](start_span)<p>ต้องหาจากผลการทดลองเท่านั้น (ห้ามใช้เลขดุลสมการ)[span_6](end_span)</p>
+            <h3>3.1 กฎอัตรา (Rate Law)</h3>
+            <div class="formula-card">
+                <div class="formula-display">$$ Rate = k[A]^m[B]^n $$</div>
+                <div class="var-list">
+                    <div class="var-item"><strong>k</strong> : Rate constant (ค่าคงที่อัตรา)</div>
+                    <div class="var-item"><strong>[ ]</strong> : Concentration (ความเข้มข้น M)</div>
+                    <div class="var-item"><strong>m, n</strong> : Order of reaction (อันดับปฏิกิริยา)</div>
+                </div>
+            </div>
 
             <div class="example-box">
                 <span class="example-badge">โจทย์ 5: หาอันดับปฏิกิริยา</span>
                 <div class="table-responsive">
-                    <table>
+                    <table style="background: white;">
                         <tr><th>Exp</th><th>[A]</th><th>[B]</th><th>Rate</th></tr>
                         <tr><td>1</td><td>0.1</td><td>0.1</td><td>2.0</td></tr>
                         <tr><td>2</td><td>0.2</td><td>0.1</td><td>4.0</td></tr>
                         <tr><td>3</td><td>0.1</td><td>0.2</td><td>8.0</td></tr>
                     </table>
                 </div>
-                <strong>วิเคราะห์:</strong>
+                <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
-                    <li>เทียบ 1 & 2: [A] x2 \(\rightarrow\) Rate x2 \(\Rightarrow\) อันดับ 1 (\(A^1\))</li>
-                    <li>เทียบ 1 & 3: [B] x2 \(\rightarrow\) Rate x4 \(\Rightarrow\) อันดับ 2 (\(B^2\))</li>
+                    <li>เทียบ 1&2: [A] เพิ่ม 2 เท่า, Rate เพิ่ม 2 เท่า \(\rightarrow\) <strong>อันดับ 1 (A)</strong></li>
+                    <li>เทียบ 1&3: [B] เพิ่ม 2 เท่า, Rate เพิ่ม 4 เท่า (\(2^2=4\)) \(\rightarrow\) <strong>อันดับ 2 (B)</strong></li>
                 </ul>
                 <strong>ตอบ:</strong> \( Rate = k[A][B]^2 \)
             </div>
 
-            <h3>3.2 ครึ่งชีวิตและกราฟ (Integrated Rate Laws)</h3>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>อันดับ</th>
-                            <th>กราฟเส้นตรง</th>
-                            [span_7](start_span)<th>ครึ่งชีวิต (\(t_{1/2}\))[span_7](end_span)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>\([A]\) vs \(t\)</td>
-                            <td>\([A]_0 / 2k\)</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>\(\ln[A]\) vs \(t\)</td>
-                            <td>\(0.693 / k\) (คงที่!)</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>\(1/[A]\) vs \(t\)</td>
-                            <td>\(1 / k[A]_0\)</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h3>3.2 ครึ่งชีวิต (Half-life) อันดับ 1</h3>
+            <div class="formula-card">
+                <div class="formula-display">$$ t_{1/2} = \frac{0.693}{k} $$</div>
+                <div class="var-list">
+                    <div class="var-item"><strong>\(t_{1/2}\)</strong> : Half-life (เวลาครึ่งชีวิต)</div>
+                    <div class="var-item"><strong>k</strong> : Rate constant (ค่าคงที่)</div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <span class="example-badge">โจทย์ 6: การสลายตัวสารกัมมันตรังสี</span>
+                <strong>โจทย์:</strong> สาร X (อันดับ 1) มี \(k = 0.1 \text{ s}^{-1}\) จะใช้เวลากี่วินาทีเพื่อให้เหลือสาร 12.5% ของเริ่มต้น?<br><br>
+                <strong>วิธีทำละเอียด:</strong>
+                <ul class="step-list">
+                    <li>
+                        <strong>หาครึ่งชีวิต:</strong> \( t_{1/2} = 0.693 / 0.1 = 6.93 \text{ s} \)
+                    </li>
+                    <li>
+                        <strong>นับรอบการสลายตัว:</strong><br>
+                        100% \(\xrightarrow{1}\) 50% \(\xrightarrow{2}\) 25% \(\xrightarrow{3}\) 12.5%<br>
+                        (ผ่านไป 3 รอบครึ่งชีวิต)
+                    </li>
+                    <li>
+                        <strong>คำนวณเวลารวม:</strong> \( 3 \times 6.93 = \mathbf{20.79 \text{ s}} \)
+                    </li>
+                </ul>
             </div>
         </section>
 
         <section id="equilibrium">
-            <h2><i class="fas fa-balance-scale"></i> 4. สมดุลเคมี (Equilibrium)</h2>
-            [span_8](start_span)<p>การคำนวณ \(K_p\) และหลักของเลอชาเตอลิเอ[span_8](end_span)</p>
+            [span_3](start_span)<h2><i class="fas fa-balance-scale"></i> 4. สมดุลเคมี (Equilibrium)[span_3](end_span)</h2>
 
             <h3>4.1 ความสัมพันธ์ \(K_p\) และ \(K_c\)</h3>
             <div class="formula-card">
-                $$ K_p = K_c(RT)^{\Delta n} $$
-                \(\Delta n = \text{mol gas}_{\text{prod}} - \text{mol gas}_{\text{react}}\)
+                <div class="formula-display">$$ K_p = K_c(RT)^{\Delta n} $$</div>
+                <div class="var-list">
+                    <div class="var-item"><strong>K_p</strong> : Pressure Equilibrium Constant</div>
+                    <div class="var-item"><strong>K_c</strong> : Concentration Equilibrium Constant</div>
+                    <div class="var-item"><strong>R</strong> : Gas Constant (0.0821)</div>
+                    <div class="var-item"><strong>\(\Delta n\)</strong> : mol gas (Prod) - mol gas (React)</div>
+                </div>
             </div>
 
             <div class="example-box">
-                <span class="example-badge">โจทย์ 6: คำนวณ Kp</span>
-                <strong>โจทย์:</strong> \( N_2(g) + 3H_2(g) \rightleftharpoons 2NH_3(g) \) มี \(K_c = 0.5\) ที่ 300 K (R=0.082) จงหา \(K_p\)<br><br>
-                <strong>วิธีทำ:</strong>
+                <span class="example-badge">โจทย์ 7: คำนวณ Kp</span>
+                <strong>โจทย์:</strong> \( 2SO_2(g) + O_2(g) \rightleftharpoons 2SO_3(g) \) ที่ 300 K มี \(K_c = 100\) จงหา \(K_p\)<br><br>
+                <strong>วิธีทำละเอียด:</strong>
                 <ul class="step-list">
-                    <li><strong>หา \(\Delta n\):</strong> \( 2 - (1+3) = -2 \)</li>
-                    <li><strong>แทนค่า:</strong><br>
-                        \( K_p = 0.5 \times (0.082 \times 300)^{-2} \)<br>
-                        \( K_p = 0.5 \times (24.6)^{-2} \approx 8.26 \times 10^{-4} \)
+                    <li>
+                        <strong>หา \(\Delta n\):</strong> \( 2 - (2+1) = -1 \)
+                    </li>
+                    <li>
+                        <strong>แทนค่า:</strong><br>
+                        \( K_p = 100 \times (0.082 \times 300)^{-1} \)<br>
+                        \( K_p = \frac{100}{24.6} \approx \mathbf{4.06} \)
                     </li>
                 </ul>
-            </div>
-
-            <h3>4.2 หลักของเลอชาเตอลิเอ (Temperature Effect)</h3>
-            [span_9](start_span)<p><strong>จำให้แม่น!</strong> อุณหภูมิเป็นปัจจัยเดียวที่เปลี่ยนค่า \(K\) ได้[span_9](end_span)</p>
-            <ul>
-                <li><strong>ดูดความร้อน (\(\Delta H > 0\)):</strong> ชอบร้อน \(\rightarrow\) เพิ่ม T, \(K\) เพิ่ม</li>
-                <li><strong>คายความร้อน (\(\Delta H < 0\)):</strong> เกลียดร้อน \(\rightarrow\) เพิ่ม T, \(K\) ลด</li>
-            </ul>
-        </section>
-
-        <section id="appendix">
-            <h2><i class="fas fa-book"></i> 5. ภาคผนวก: คำศัพท์ตัวแปร</h2>
-            <p>รวมคำแปลตัวแปรภาษาอังกฤษที่ใช้ในสูตรทั้งหมด</p>
-            <div class="table-responsive">
-                <table>
-                    <thead>
-                        <tr><th>ตัวแปร</th><th>ความหมาย (English/Thai)</th><th>หน่วย (Unit)</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><strong>M</strong></td><td>Molarity (โมลาริตี)</td><td>mol/L</td></tr>
-                        <tr><td><strong>m</strong></td><td>Molality (โมลาลิตี)</td><td>mol/kg</td></tr>
-                        <tr><td><strong>q</strong></td><td>Heat (ความร้อน)</td><td>Joule (J)</td></tr>
-                        <tr><td><strong>w</strong></td><td>Work (งาน)</td><td>Joule (J)</td></tr>
-                        <tr><td><strong>H</strong></td><td>Enthalpy (เอนทัลปี)</td><td>kJ/mol</td></tr>
-                        <tr><td><strong>S</strong></td><td>Entropy (เอนโทรปี)</td><td>J/K·mol</td></tr>
-                        <tr><td><strong>G</strong></td><td>Gibbs Free Energy (พลังงานอิสระกิบส์)</td><td>kJ/mol</td></tr>
-                        <tr><td><strong>k</strong></td><td>Rate Constant (ค่าคงที่อัตรา)</td><td>ขึ้นกับอันดับ</td></tr>
-                        <tr><td><strong>Ea</strong></td><td>Activation Energy (พลังงานก่อกัมมันต์)</td><td>J/mol</td></tr>
-                        <tr><td><strong>K</strong></td><td>Equilibrium Constant (ค่าคงที่สมดุล)</td><td>ไม่มีหน่วย</td></tr>
-                    </tbody>
-                </table>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <p>สร้างเพื่อการศึกษาเตรียมสอบ: Chemistry for Teachers 2</p>
-        <p style="font-size:0.8rem; margin-top:5px; opacity:0.7;">&copy; 2024 Midterm Review Edition</p>
+        <p>สร้างเพื่อการศึกษา: สรุปเตรียมสอบ Chemistry for Teachers 2</p>
+        <p style="font-size:0.8rem; margin-top:5px; opacity:0.7;">&copy; 2024 Final Revision</p>
     </footer>
 
 </body>
